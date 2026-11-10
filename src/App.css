@@ -1,0 +1,537 @@
+
+:root {
+  --navy: #101a35;
+  --navy2: #1a2b57;
+  --blue: #2563eb;
+  --red: #e63950;
+  --bg: #f0f3f8;
+  --ink: #14213d;
+  --muted: #64748b;
+  --card: #fff;
+  --line: #dbe3ef;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Button Styles */
+.primary {
+  background: var(--blue);
+  color: #fff;
+}
+
+.danger {
+  background: var(--red);
+  color: #fff;
+}
+
+.ghost {
+  background: #e7edf7;
+  color: var(--ink);
+}
+
+.wide {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Branding */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 30px;
+  font-weight: 800;
+  color: #5b91ff;
+}
+
+/* Authentication Page */
+.auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--navy);
+}
+
+.hero {
+  padding: 8vh 8%;
+  color: white;
+  background: linear-gradient(145deg, #101a35, #203f98);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.08;
+  margin: 35px 0 18px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e0e8ff;
+  max-width: 620px;
+}
+
+.pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+}
+
+.pills span {
+  border: 1px solid #ffffff35;
+  border-radius: 30px;
+  padding: 12px 15px;
+  background: #ffffff12;
+}
+
+.authside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #fff;
+}
+
+.authbox {
+  width: min(100%, 470px);
+}
+
+.authbrand {
+  font-size: 27px;
+}
+
+.authbox h2 {
+  font-size: 36px;
+  margin: 22px 0 8px;
+}
+
+.sub {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+/* Form Fields */
+.field {
+  display: block;
+  margin: 18px 0;
+}
+
+.field span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #edf3ff;
+  color: #172033;
+}
+
+.switch {
+  text-align: center;
+  margin: 24px 0;
+  color: var(--muted);
+}
+
+.textbutton {
+  padding: 0;
+  background: none;
+  color: var(--blue);
+  display: inline;
+  font-weight: 700;
+}
+
+.demo {
+  background: #eef5ff;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  color: #1744a3;
+  line-height: 1.5;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.error {
+  color: #b91c1c;
+  min-height: 20px;
+  margin-top: 8px;
+}
+
+/* Main Application Layout */
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, var(--navy), #192c5c);
+  color: white;
+  padding: 25px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 27px;
+  font-weight: 800;
+  color: #5b91ff;
+  padding: 10px 12px 28px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 10px;
+}
+
+/* Navigation */
+.navbtn {
+  text-align: left;
+  background: transparent;
+  color: #e6edff;
+  font-size: 16px;
+  justify-content: flex-start;
+}
+
+.navbtn.active,
+.navbtn:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+.userbox {
+  margin-top: auto;
+  background: #ffffff0d;
+  border-radius: 14px;
+  padding: 16px;
+  line-height: 1.7;
+  display: grid;
+  gap: 5px;
+}
+
+.userbox small {
+  font-size: 13px;
+}
+
+/* Main Content */
+.main {
+  padding: 28px;
+  min-width: 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.top h1 {
+  margin: 0 0 8px;
+  font-size: 34px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.status {
+  background: white;
+  border-radius: 30px;
+  padding: 14px 20px;
+  box-shadow: 0 6px 24px #1020400c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.statusdot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #c4b5fd;
+}
+
+.statusdot.connected {
+  background: #22c55e;
+}
+
+/* Dashboard Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 30px #1020400a;
+}
+
+.card h2 {
+  margin: 0 0 20px;
+}
+
+.metricline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.value {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 18px 0;
+}
+
+/* Dashboard Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 22px;
+}
+
+.progressrow {
+  margin: 22px 0;
+}
+
+.progresshead {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.track {
+  height: 14px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--red));
+  transition: width 0.3s;
+}
+
+/* Notifications and Utilities */
+.notice {
+  padding: 14px;
+  border-radius: 12px;
+  background: #eef5ff;
+  color: #1744a3;
+  margin: 12px 0;
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.spaced {
+  margin-top: 22px;
+}
+
+/* Workout Statistics */
+.workoutstats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 20px 0;
+}
+
+.workoutstats .card {
+  box-shadow: none;
+  border: 1px solid #f2f4f8;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+/* Tables */
+.tablewrap {
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 560px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--muted);
+}
+
+/* Form Rows */
+.formrow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.formrow label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.formrow input {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  min-width: 160px;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: #14213d;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px #0002;
+}
+
+/* Tablet Responsive Design */
+@media (max-width: 1000px) {
+  .auth {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 45px 8%;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .sidebrand {
+    padding-bottom: 10px;
+  }
+
+  .sidebar nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .userbox {
+    margin-top: 10px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 560px) {
+  .main {
+    padding: 16px;
+  }
+
+  .cards,
+  .workoutstats {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar nav {
+    grid-template-columns: 1fr;
+  }
+
+  .authside {
+    padding: 22px;
+  }
+
+  .authbox h2 {
+    font-size: 30px;
+  }
+
+  .top h1 {
+    font-size: 27px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .progresshead {
+    font-size: 14px;
+  }
+}

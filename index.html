@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitTrack Pro</title>
+<style>
+:root{--navy:#101a35;--navy2:#1a2b57;--blue:#2563eb;--red:#e63950;--bg:#f0f3f8;--ink:#14213d;--muted:#64748b;--card:#fff;--line:#dbe3ef}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:12px 16px;font-weight:700}.primary{background:var(--blue);color:#fff}.danger{background:var(--red);color:#fff}.ghost{background:#e7edf7;color:var(--ink)}.hidden{display:none!important}
+.auth{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--navy)}.hero{padding:8vh 8%;color:white;background:linear-gradient(145deg,#101a35,#203f98);display:flex;flex-direction:column;justify-content:center}.brand{font-size:30px;font-weight:800;color:#5b91ff}.hero h1{font-size:clamp(34px,4vw,58px);line-height:1.08;margin:35px 0 18px}.hero p{font-size:18px;line-height:1.6;color:#e0e8ff;max-width:620px}.pills{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.pill{border:1px solid #ffffff35;border-radius:30px;padding:12px 15px;background:#ffffff12}.authside{display:flex;align-items:center;justify-content:center;padding:30px;background:#fff}.authbox{width:min(100%,470px)}.authbox h2{font-size:36px;margin:22px 0 8px}.sub{color:var(--muted);margin-bottom:30px}.field{display:block;margin:18px 0}.field span{display:block;font-weight:700;margin-bottom:8px}.field input,.field select{width:100%;padding:14px;border:1px solid #cbd5e1;border-radius:10px;background:#edf3ff;color:#172033}.wide{width:100%;margin-top:8px}.switch{text-align:center;margin:24px 0;color:var(--muted)}.link{color:var(--blue);font-weight:700;cursor:pointer}.demo{background:#eef5ff;border-radius:14px;padding:16px;text-align:center;color:#1744a3;line-height:1.5;font-size:14px;margin-top:20px}.error{color:#b91c1c;min-height:20px;margin-top:8px}.app{min-height:100vh;display:grid;grid-template-columns:270px 1fr}.sidebar{background:linear-gradient(180deg,var(--navy),#192c5c);color:white;padding:25px 18px;display:flex;flex-direction:column;gap:10px}.sidebrand{font-size:27px;font-weight:800;color:#5b91ff;padding:10px 12px 28px}.navbtn{text-align:left;background:transparent;color:#e6edff;font-size:16px}.navbtn.active,.navbtn:hover{background:var(--red);color:#fff}.userbox{margin-top:auto;background:#ffffff0d;border-radius:14px;padding:16px;line-height:1.7}.main{padding:28px;min-width:0}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:25px}.top h1{margin:0 0 8px;font-size:34px}.muted{color:var(--muted)}.status{background:white;border-radius:30px;padding:14px 20px;box-shadow:0 6px 24px #1020400c}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:22px}.card{background:var(--card);border-radius:20px;padding:24px;box-shadow:0 8px 30px #1020400a}.metric{color:var(--muted);font-size:16px}.value{font-size:36px;font-weight:800;margin:18px 0}.layout{display:grid;grid-template-columns:1.5fr 1fr;gap:22px}.card h2{margin:0 0 20px}.progressrow{margin:22px 0}.progresshead{display:flex;justify-content:space-between;margin-bottom:10px}.track{height:14px;background:#e2e8f0;border-radius:20px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--red));transition:width .3s}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.section{display:none}.section.active{display:block}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:560px}th,td{text-align:left;padding:13px;border-bottom:1px solid var(--line)}th{color:var(--muted)}.formrow{display:flex;gap:10px;flex-wrap:wrap}.formrow input,.formrow select{padding:12px;border:1px solid var(--line);border-radius:9px;min-width:130px}.notice{padding:14px;border-radius:12px;background:#eef5ff;color:#1744a3;margin:12px 0}.small{font-size:13px;color:var(--muted)}.adminstat{border-top:4px solid var(--red)}@media(max-width:1000px){.auth{grid-template-columns:1fr}.hero{padding:45px 8%}.app{grid-template-columns:1fr}.sidebar{position:static}.sidebrand{padding-bottom:10px}.userbox{margin-top:10px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}}@media(max-width:560px){.main{padding:16px}.cards{grid-template-columns:1fr}.authside{padding:22px}.authbox h2{font-size:30px}.top h1{font-size:27px}}
+</style>
+</head>
+<body>
+<section id="auth" class="auth">
+  <div class="hero">
+    <div class="brand">🏃 FitTrack Pro</div>
+    <h1>Your health.<br>Your progress.<br>Your data.</h1>
+    <p>Track workouts, goals and compatible Bluetooth heart-rate devices in one fitness application.</p>
+    <div class="pills"><span class="pill">📊 Smart tracking</span><span class="pill">⌚ Watch ready</span><span class="pill">🔵 Bluetooth BLE</span></div>
+    <p><b>10K</b> Step Goal　 ·　 <b>8h</b> Sleep Goal　 ·　 <b>30m</b> Workout Goal</p>
+  </div>
+  <div class="authside">
+    <div class="authbox">
+      <div class="brand">🏃 FitTrack</div>
+      <div id="loginForm">
+        <h2>Welcome back</h2><div class="sub">Sign in to continue.</div>
+        <label class="field"><span>Username / Email</span><input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="username"></label>
+        <label class="field"><span>Password</span><input id="loginPassword" type="password" placeholder="Enter password" autocomplete="current-password"></label>
+        <button class="primary wide" onclick="login()">Login to Dashboard →</button>
+        <div id="loginError" class="error"></div>
+        <div class="switch">New to FitTrack? <span class="link" onclick="showAuth('signup')">Create an account</span></div>
+        <div class="demo"><b>Admin demo</b><br>Email: admin@fittrack.com<br>Password: admin123<br><span class="small">Demo credentials for this local prototype only.</span></div>
+      </div>
+      <div id="signupForm" class="hidden">
+        <h2>Create account</h2><div class="sub">Start tracking your fitness progress.</div>
+        <label class="field"><span>Full name</span><input id="signupName" placeholder="Your name"></label>
+        <label class="field"><span>Email</span><input id="signupEmail" type="email" placeholder="you@example.com"></label>
+        <label class="field"><span>Password (minimum 6 characters)</span><input id="signupPassword" type="password" placeholder="Create a password"></label>
+        <button class="primary wide" onclick="signup()">Create account</button>
+        <div id="signupError" class="error"></div>
+        <div class="switch">Already registered? <span class="link" onclick="showAuth('login')">Sign in</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="sidebrand">🏃 FitTrack</div>
+    <button class="navbtn active" data-page="dashboard" onclick="go('dashboard')">🏠 Dashboard</button>
+    <button class="navbtn" data-page="activity" onclick="go('activity')">📊 Activity & Workout</button>
+    <button class="navbtn" data-page="watch" onclick="go('watch')">⌚ Smartwatch</button>
+    <button class="navbtn" data-page="history" onclick="go('history')">🗓️ History</button>
+    <button class="navbtn" data-page="goals" onclick="go('goals')">🎯 Goals</button>
+    <button id="adminNav" class="navbtn hidden" data-page="admin" onclick="go('admin')">🛡️ Admin</button>
+    <div class="userbox">Logged in as<br><b id="userName">User</b><br><small id="userRole">USER</small><button class="ghost wide" onclick="logout()">Logout</button></div>
+  </aside>
+  <main class="main">
+    <div class="top"><div><h1 id="pageTitle">Fitness Dashboard</h1><div class="muted" id="today"></div></div><div class="status" id="btStatus">⚪ Bluetooth not connected</div></div>
+
+    <section id="page-dashboard" class="section active">
+      <div class="cards">
+        <div class="card"><div class="metric">Steps</div><div class="value" id="stepsMetric">0</div><div class="muted">Goal: <span id="stepGoalLabel">10,000</span></div></div>
+        <div class="card"><div class="metric">Heart Rate</div><div class="value" id="heartMetric">--</div><div class="muted">BPM · live when connected</div></div>
+        <div class="card"><div class="metric">Calories</div><div class="value" id="calMetric">0</div><div class="muted">Estimated today</div></div>
+        <div class="card"><div class="metric">Distance</div><div class="value" id="distMetric">0.00 km</div><div class="muted">Estimated</div></div>
+      </div>
+      <div class="layout">
+        <div class="card"><h2>Today's Progress</h2><div id="progressRows"></div></div>
+        <div class="card"><h2>Tips</h2><div class="notice">Stay hydrated and keep your activity consistent.</div><p class="muted">Connect a compatible heart-rate monitor from the Smartwatch page. Step counts from watches vary by manufacturer and are not universally exposed through browser Bluetooth.</p></div>
+      </div>
+      <div class="card" style="margin-top:22px"><h2>7-Day Steps</h2><p class="muted" id="weekSummary">No activity history yet.</p></div>
+    </section>
+
+    <section id="page-activity" class="section">
+      <div class="card"><h2>Workout tracker</h2><p class="muted">Start a session; the timer, estimated calories and distance update while it runs. Use your watch's live heart rate when connected.</p>
+        <label class="field"><span>Workout type</span><select id="workoutType"><option>Walking</option><option>Running</option><option>Cycling</option><option>Strength training</option><option>Other</option></select></label>
+        <div class="cards" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="card"><div class="metric">Duration</div><div class="value" id="timer">00:00</div></div><div class="card"><div class="metric">Calories</div><div class="value" id="workCal">0</div></div><div class="card"><div class="metric">Distance</div><div class="value" id="workDist">0.00</div><div class="muted">km</div></div></div>
+        <div class="actions"><button class="primary" id="startBtn" onclick="startWorkout()">▶ Start workout</button><button class="ghost" onclick="pauseWorkout()">Ⅱ Pause</button><button class="danger" onclick="finishWorkout()">■ Finish & save</button></div><div class="small" style="margin-top:12px">Estimates are approximate and depend on workout type and elapsed time.</div>
+      </div>
+    </section>
+
+    <section id="page-watch" class="section">
+      <div class="card"><h2>Bluetooth smartwatch</h2><p>Connect a compatible BLE heart-rate device. Your browser must support Web Bluetooth (typically Chrome or Edge on desktop/Android) and the page must run on localhost or HTTPS.</p>
+        <div class="actions"><button class="primary" onclick="connectWatch()">🔵 Connect device</button><button class="ghost" onclick="disconnectWatch()">Disconnect</button></div>
+        <div class="notice" id="watchMessage">Not connected. Choose Connect device and select your watch.</div>
+        <p><b>Heart rate:</b> <span id="watchHR">--</span> BPM</p>
+        <p class="small">Browser Bluetooth support depends on the watch. This demo reads the standard Heart Rate Service (0x180D). It cannot guarantee step counts or calorie data from every brand.</p>
+      </div>
+    </section>
+
+    <section id="page-history" class="section"><div class="card"><h2>Workout history</h2><div class="tablewrap"><table><thead><tr><th>Date</th><th>Workout</th><th>Duration</th><th>Calories</th><th>Distance</th></tr></thead><tbody id="historyBody"></tbody></table></div></div></section>
+    <section id="page-goals" class="section"><div class="card"><h2>Daily goals</h2><div class="formrow"><label>Steps <input id="goalSteps" type="number" min="1" value="10000"></label><label>Water (glasses) <input id="goalWater" type="number" min="1" value="8"></label><label>Workout (minutes) <input id="goalWorkout" type="number" min="1" value="30"></label><label>Sleep (hours) <input id="goalSleep" type="number" min="1" value="8"></label></div><button class="primary" style="margin-top:16px" onclick="saveGoals()">Save goals</button><p id="goalMessage" class="muted"></p></div></section>
+
+    <section id="page-admin" class="section">
+      <div class="cards"><div class="card adminstat"><div class="metric">Registered accounts</div><div class="value" id="adminUsers">0</div></div><div class="card adminstat"><div class="metric">Saved workouts</div><div class="value" id="adminWorkouts">0</div></div><div class="card adminstat"><div class="metric">Admin role</div><div class="value">Active</div></div><div class="card adminstat"><div class="metric">Storage</div><div class="value" style="font-size:24px">This browser</div></div></div>
+      <div class="card"><h2>Admin — registered accounts</h2><p class="muted">Prototype admin view. Accounts are stored in this browser only; this is not a secure production authentication system.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Created</th></tr></thead><tbody id="adminUsersBody"></tbody></table></div></div>
+    </section>
+  </main>
+</section>
+<script>
+const ADMIN_EMAIL='admin@fittrack.com', ADMIN_PASS='admin123';
+const $=id=>document.getElementById(id);
+const read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}};
+const write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+let current=null, workout=null, timerId=null, startedAt=0, elapsed=0, watchDevice=null, heartChar=null;
+let goals={steps:10000,water:8,workout:30,sleep:8};
+let daily={steps:0,water:0,workout:0,sleep:0,calories:0,distance:0};
+let workouts=[];
+function seed(){let users=read('ft_users',[]);if(!users.some(u=>u.email===ADMIN_EMAIL)){users.push({name:'FitTrack Admin',email:ADMIN_EMAIL,password:ADMIN_PASS,role:'ADMIN',created:new Date().toLocaleDateString()});write('ft_users',users)}}
+function showAuth(which){$('loginForm').classList.toggle('hidden',which!=='login');$('signupForm').classList.toggle('hidden',which!=='signup');$('loginError').textContent='';$('signupError').textContent=''}
+function login(){let email=$('loginEmail').value.trim().toLowerCase(),pass=$('loginPassword').value;let u=read('ft_users',[]).find(x=>x.email.toLowerCase()===email&&x.password===pass);if(!u){$('loginError').textContent='Incorrect email or password.';return}current=u;openApp()}
+function signup(){let name=$('signupName').value.trim(),email=$('signupEmail').value.trim().toLowerCase(),password=$('signupPassword').value;if(!name||!email||password.length<6){$('signupError').textContent='Enter your name, a valid email and a password with at least 6 characters.';return}let users=read('ft_users',[]);if(users.some(u=>u.email.toLowerCase()===email)){$('signupError').textContent='An account with this email already exists.';return}let u={name,email,password,role:'USER',created:new Date().toLocaleDateString()};users.push(u);write('ft_users',users);current=u;openApp()}
+function openApp(){ $('auth').classList.add('hidden');$('app').classList.remove('hidden');$('userName').textContent=current.name;$('userRole').textContent=current.role;$('adminNav').classList.toggle('hidden',current.role!=='ADMIN');go('dashboard');render(); }
+function logout(){stopClock();disconnectWatch();current=null;$('app').classList.add('hidden');$('auth').classList.remove('hidden');showAuth('login')}
+function go(page){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));$('page-'+page).classList.add('active');document.querySelectorAll('.navbtn').forEach(x=>x.classList.toggle('active',x.dataset.page===page));$('pageTitle').textContent=({dashboard:'Fitness Dashboard',activity:'Activity & Workout',watch:'Smartwatch',history:'Workout History',goals:'Daily Goals',admin:'Admin Dashboard'})[page]||'Dashboard';if(page==='admin')renderAdmin()}
+function render(){let date=new Date();$('today').textContent=date.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'2-digit',year:'numeric'});$('stepsMetric').textContent=daily.steps.toLocaleString();$('heartMetric').textContent=$('watchHR').textContent;$('calMetric').textContent=Math.round(daily.calories);$('distMetric').textContent=daily.distance.toFixed(2)+' km';$('stepGoalLabel').textContent=goals.steps.toLocaleString();let rows=[['Steps',daily.steps,goals.steps],['Water',daily.water,goals.water],['Workout',daily.workout,goals.workout],['Sleep',daily.sleep,goals.sleep]];$('progressRows').innerHTML=rows.map(([n,v,g])=>`<div class="progressrow"><div class="progresshead"><span>${n}</span><b>${v}/${g}${n==='Steps'?'':''}</b></div><div class="track"><div class="fill" style="width:${Math.min(100,v/Math.max(g,1)*100)}%"></div></div></div>`).join('');$('weekSummary').textContent=workouts.length?`You have saved ${workouts.length} workout session(s).`:'No activity history yet.';renderHistory()}
+function startWorkout(){if(workout)return;workout={type:$('workoutType').value,start:Date.now(),seconds:elapsed};startedAt=Date.now()-elapsed*1000;$('startBtn').textContent='Workout running';timerId=setInterval(tick,1000);tick()}
+function tick(){if(!workout)return;elapsed=Math.floor((Date.now()-startedAt)/1000);let m=String(Math.floor(elapsed/60)).padStart(2,'0'),s=String(elapsed%60).padStart(2,'0');$('timer').textContent=m+':'+s;let mins=elapsed/60;let rate=workout.type==='Running'?10:workout.type==='Cycling'?8:workout.type==='Strength training'?5:4;$('workCal').textContent=Math.round(mins*rate);let km=mins*(workout.type==='Running'?0.15:workout.type==='Walking'?0.08:workout.type==='Cycling'?0.25:0);$('workDist').textContent=km.toFixed(2)}
+function pauseWorkout(){if(!workout)return;elapsed=Math.floor((Date.now()-startedAt)/1000);stopClock();workout=null;$('startBtn').textContent='▶ Resume workout'}
+function stopClock(){if(timerId){clearInterval(timerId);timerId=null}}
+function finishWorkout(){if(!workout&&!elapsed){alert('Start a workout first.');return}stopClock();let type=workout?.type||$('workoutType').value,mins=elapsed/60,rate=type==='Running'?10:type==='Cycling'?8:type==='Strength training'?5:4,cal=Math.round(mins*rate),dist=mins*(type==='Running'?.15:type==='Walking'?.08:type==='Cycling'?.25:0);workouts.unshift({date:new Date().toLocaleString(),type,duration:Math.round(mins),calories:cal,distance:dist.toFixed(2)});write('ft_workouts_'+current.email,workouts);daily.workout+=Math.round(mins);daily.calories+=cal;daily.distance+=dist;daily.steps+=Math.round(dist*1300);elapsed=0;workout=null;$('timer').textContent='00:00';$('workCal').textContent='0';$('workDist').textContent='0.00';$('startBtn').textContent='▶ Start workout';render()}
+function renderHistory(){$('historyBody').innerHTML=workouts.length?workouts.map(w=>`<tr><td>${w.date}</td><td>${w.type}</td><td>${w.duration} min</td><td>${w.calories}</td><td>${w.distance} km</td></tr>`).join(''):'<tr><td colspan="5">No saved workouts yet.</td></tr>'}
+function saveGoals(){goals={steps:+$('goalSteps').value||10000,water:+$('goalWater').value||8,workout:+$('goalWorkout').value||30,sleep:+$('goalSleep').value||8};write('ft_goals_'+current.email,goals);$('goalMessage').textContent='Goals saved.';render()}
+async function connectWatch(){if(!navigator.bluetooth){$('watchMessage').textContent='Web Bluetooth is unavailable in this browser. Try Chrome or Edge on localhost/HTTPS.';return}try{watchDevice=await navigator.bluetooth.requestDevice({filters:[{services:['heart_rate']}]});watchDevice.addEventListener('gattserverdisconnected',()=>{$('btStatus').textContent='⚪ Bluetooth disconnected';$('watchMessage').textContent='Device disconnected.'});let server=await watchDevice.gatt.connect(),service=await server.getPrimaryService('heart_rate');heartChar=await service.getCharacteristic('heart_rate_measurement');await heartChar.startNotifications();heartChar.addEventListener('characteristicvaluechanged',e=>{let v=e.target.value,flags=v.getUint8(0),hr=(flags&1)?v.getUint16(1,true):v.getUint8(1);$('watchHR').textContent=hr;$('heartMetric').textContent=hr});$('btStatus').textContent='🟢 Bluetooth connected';$('watchMessage').textContent='Connected to '+watchDevice.name+'. Heart rate updates live.'}catch(e){$('watchMessage').textContent='Connection cancelled or failed: '+e.message}}
+function disconnectWatch(){try{if(watchDevice?.gatt?.connected)watchDevice.gatt.disconnect()}catch{}watchDevice=null;$('btStatus').textContent='⚪ Bluetooth not connected';$('watchMessage').textContent='Not connected.'}
+function renderAdmin(){if(current?.role!=='ADMIN')return;let users=read('ft_users',[]);let all=users.reduce((n,u)=>n+read('ft_workouts_'+u.email,[]).length,0);$('adminUsers').textContent=users.length;$('adminWorkouts').textContent=all;$('adminUsersBody').innerHTML=users.map(u=>`<tr><td>${escapeHtml(u.name)}</td><td>${escapeHtml(u.email)}</td><td>${u.role}</td><td>${u.created||'—'}</td></tr>`).join('')}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function init(){seed();$('today').textContent=new Date().toLocaleDateString();$('goalSteps').value=goals.steps;$('goalWater').value=goals.water;$('goalWorkout').value=goals.workout;$('goalSleep').value=goals.sleep}
+init();
+</script>
+</body>
+</html>
